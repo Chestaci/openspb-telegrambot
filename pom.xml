@@ -10,11 +10,12 @@
 	</parent>
 	<groupId>com.github.Chestaci</groupId>
 	<artifactId>openspb-telegrambot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<name>OpenSPb TelegramBot</name>
 	<description>TelegramBot for OpenSPb </description>
 	<properties>
 		<java.version>11</java.version>
+		<telegrambot.starter.version>5.7.1</telegrambot.starter.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -27,6 +28,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.telegram</groupId>
+			<artifactId>telegrambots-spring-boot-starter</artifactId>
+			<version>${telegrambot.starter.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

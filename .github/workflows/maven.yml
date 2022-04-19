@@ -26,7 +26,7 @@ jobs:
       with:
          files: 'main/src/main/resources/application.properties'
       env:
-         username: tcranz
-         password: ${{ secrets.PASSWORD }}
+         username: openspb_bot
+         password: ${{ secrets.OPENSPB_SECRET_TOKEN }}
     - name: Build with Maven
       run: mvn -B package --file pom.xml

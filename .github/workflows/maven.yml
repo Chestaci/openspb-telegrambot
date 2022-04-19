@@ -22,5 +22,11 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+    - uses: actions/variable-substitution@v1
+      with:
+         files: 'main/src/main/resources/application.properties'
+      env:
+         username: tcranz
+         password: ${{ secrets.PASSWORD }}
     - name: Build with Maven
       run: mvn -B package --file pom.xml

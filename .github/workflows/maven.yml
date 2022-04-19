@@ -25,4 +25,5 @@ jobs:
     - name: Build with Maven
       env:
         SECRET_TOKEN: ${{ secrets.OPENSPB_SECRET_TOKEN }}
-      run: mvn -Dusername=openspb_bot -Dtoken=$SECRET_TOKEN -B package --file pom.xml
+      run: mvn -B package --file pom.xml
+        with:token=$SECRET_TOKEN 

@@ -24,9 +24,9 @@ jobs:
         cache: maven
     - uses: actions/variable-substitution@v1
       with:
-         files: 'main/src/main/resources/application.properties'
+         files: 'https://github.com/Chestaci/openspb-telegrambot/blob/main/src/main/resources/application.properties'
       env:
-         username: openspb_bot
-         password: ${{ secrets.OPENSPB_SECRET_TOKEN }}
+         bot.username: 'openspb_bot'
+         bot.password: ${{ secrets.OPENSPB_SECRET_TOKEN }}
     - name: Build with Maven
       run: mvn -B package --file pom.xml

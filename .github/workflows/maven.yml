@@ -22,11 +22,5 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: My Action
-      with:
-         files: 'https://github.com/Chestaci/openspb-telegrambot/blob/main/src/main/resources/application.properties'
-      env:
-         bot.username: 'openspb_bot'
-         bot.password: ${{ secrets.OPENSPB_SECRET_TOKEN }}
     - name: Build with Maven
       run: mvn -B package --file pom.xml

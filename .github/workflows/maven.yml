@@ -22,7 +22,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - uses: actions/variable-substitution@v1
+    - name: Chestaci/openspb-telegrambot/blob/main/src/main/resources/
       with:
          files: 'https://github.com/Chestaci/openspb-telegrambot/blob/main/src/main/resources/application.properties'
       env:

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.github.Chestaci</groupId>
 	<artifactId>openspb-telegrambot</artifactId>
-	<version>0.2.0-SNAPSHOT</version>
+	<version>0.3.0-SNAPSHOT</version>
 	<name>OpenSPb TelegramBot</name>
 	<description>TelegramBot for OpenSPb </description>
 	<properties>

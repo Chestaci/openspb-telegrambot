@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.3.0-SNAPSHOT
+
+*   OpenSPbBot-10: added deployment process to the project
+
 ## 0.2.0-SNAPSHOT
 
 *   OpenSPbBot-3: implements Command pattern for handling Telegram Bot commands

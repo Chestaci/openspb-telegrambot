@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.4.0-SNAPSHOT
+
+*   OpenSPbBot-1: added repository layer
+
 ## 0.3.0-SNAPSHOT
 
 *   OpenSPbBot-10: added deployment process to the project

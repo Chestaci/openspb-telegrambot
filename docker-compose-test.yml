@@ -1,26 +1,15 @@
 version: '3.1'
 
 services:
-  openspb-bot:
-    depends_on:
-      - openspb-db
-    build:
-      context: .
-    environment:
-      BOT_NAME: ${BOT_NAME}
-      BOT_TOKEN: ${BOT_TOKEN}
-      BOT_DB_USERNAME: ${BOT_DB_USERNAME}
-      BOT_DB_PASSWORD: ${BOT_DB_PASSWORD}
-    restart: always
-  openspb-db:
+  openspb-db-dev:
     image: mysql
     restart: always
     environment:
-      MYSQL_DATABASE: 'openspb_db'
+      MYSQL_DATABASE: 'dev_openspb_db'
       # So you don't have to use root, but you can if you like
-      MYSQL_USER: ${BOT_DB_USERNAME}
+      MYSQL_USER: 'dev_openspb_db_user'
       # You can use whatever password you like
-      MYSQL_PASSWORD: ${BOT_DB_PASSWORD}
+      MYSQL_PASSWORD: 'dev_openspb_db_password'
       # Password for root access
       MYSQL_ROOT_PASSWORD: 'root'
     ports:

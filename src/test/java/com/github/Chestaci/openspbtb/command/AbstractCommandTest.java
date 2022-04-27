@@ -1,6 +1,7 @@
 package com.github.Chestaci.openspbtb.command;
 
 import com.github.Chestaci.openspbtb.bot.OpenSPbTelegramBot;
+import com.github.Chestaci.openspbtb.repository.TelegramUserService;
 import com.github.Chestaci.openspbtb.service.SendBotMessageService;
 import com.github.Chestaci.openspbtb.service.SendBotMessageServiceImpl;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,7 @@ abstract class AbstractCommandTest {
 
     protected OpenSPbTelegramBot openSPbBot = Mockito.mock(OpenSPbTelegramBot.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(openSPbBot);
+    protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
 
     abstract String getCommandName();
 

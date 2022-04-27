@@ -1,7 +1,9 @@
 package com.github.Chestaci.openspbtb.bot;
 
 import com.github.Chestaci.openspbtb.command.CommandContainer;
+import com.github.Chestaci.openspbtb.repository.TelegramUserService;
 import com.github.Chestaci.openspbtb.service.SendBotMessageServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -48,8 +50,9 @@ public class OpenSPbTelegramBot extends TelegramLongPollingBot {
 
     private final CommandContainer commandContainer;
 
-    public OpenSPbTelegramBot() {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
+    @Autowired
+    public OpenSPbTelegramBot(TelegramUserService telegramUserService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
     }
 
 }

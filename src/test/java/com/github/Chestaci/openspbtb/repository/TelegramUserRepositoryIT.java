@@ -1,5 +1,6 @@
 package com.github.Chestaci.openspbtb.repository;
 
+import com.github.Chestaci.openspbtb.repository.entity.NewsSub;
 import com.github.Chestaci.openspbtb.repository.entity.TelegramUser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -40,7 +41,7 @@ public class TelegramUserRepositoryIT {
     public void shouldProperlySaveTelegramUser() {
         //given
         TelegramUser telegramUser = new TelegramUser();
-        telegramUser.setChatId("1234567890");
+        telegramUser.setChatId(1234567890L);
         telegramUser.setActive(false);
         telegramUserRepository.save(telegramUser);
 
@@ -51,4 +52,19 @@ public class TelegramUserRepositoryIT {
         Assertions.assertTrue(saved.isPresent());
         Assertions.assertEquals(telegramUser, saved.get());
     }
+
+    @Sql(scripts = {"/sql/clearDbs.sql", "/sql/newsSubForFiveUsers.sql"})
+    @Test
+    public void shouldProperlyGetNewsSubsForUser() {
+        //when
+        Optional<TelegramUser> userFromDB = telegramUserRepository.findById(20L);
+
+        //then
+        Assertions.assertTrue(userFromDB.isPresent());
+        NewsSub newsSub = userFromDB.get().getNewsSub();
+        Assertions.assertEquals("n1", newsSub.getTitle());
+        Assertions.assertEquals(2, newsSub.getId());
+        Assertions.assertEquals(2, newsSub.getLastNewsId());
+    }
+
 }

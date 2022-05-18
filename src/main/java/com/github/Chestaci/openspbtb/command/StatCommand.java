@@ -1,6 +1,6 @@
 package com.github.Chestaci.openspbtb.command;
 
-import com.github.Chestaci.openspbtb.repository.TelegramUserService;
+import com.github.Chestaci.openspbtb.service.TelegramUserService;
 import com.github.Chestaci.openspbtb.service.SendBotMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -24,6 +24,6 @@ public class StatCommand implements Command {
     @Override
     public void execute(Update update) {
         int activeUserCount = telegramUserService.retrieveAllActiveUsers().size();
-        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), String.format(STAT_MESSAGE, activeUserCount));
+        sendBotMessageService.sendMessage(update.getMessage().getChatId(), String.format(STAT_MESSAGE, activeUserCount));
     }
 }

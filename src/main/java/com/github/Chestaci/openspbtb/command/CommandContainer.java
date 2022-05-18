@@ -15,6 +15,7 @@ public class CommandContainer {
     private final ImmutableMap<String, Command> commandMap;
     private final Command unknownCommand;
 
+
     public CommandContainer(SendBotMessageService sendBotMessageService, TelegramUserService telegramUserService, NewsSubService newsSubService) {
 
         commandMap = ImmutableMap.<String, Command>builder()

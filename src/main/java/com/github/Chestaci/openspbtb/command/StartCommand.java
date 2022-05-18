@@ -1,5 +1,6 @@
 package com.github.Chestaci.openspbtb.command;
 
+
 import com.github.Chestaci.openspbtb.repository.entity.NewsSub;
 import com.github.Chestaci.openspbtb.service.NewsSubService;
 import com.github.Chestaci.openspbtb.service.TelegramUserService;

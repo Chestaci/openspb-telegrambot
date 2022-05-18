@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.github.Chestaci</groupId>
 	<artifactId>openspb-telegrambot</artifactId>
-	<version>0.4.0-SNAPSHOT</version>
+	<version>0.5.0-SNAPSHOT</version>
 	<name>OpenSPb TelegramBot</name>
 	<description>TelegramBot for OpenSPb </description>
 	<properties>
@@ -61,6 +61,13 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.14.3</version>
+		</dependency>
+
 
 	</dependencies>
 

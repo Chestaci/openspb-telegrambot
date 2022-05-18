@@ -1,7 +1,6 @@
 package com.github.Chestaci.openspbtb.service;
 
 import com.github.Chestaci.openspbtb.repository.TelegramUserRepository;
-import com.github.Chestaci.openspbtb.repository.TelegramUserService;
 import com.github.Chestaci.openspbtb.repository.entity.TelegramUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,7 +32,7 @@ public class TelegramUserServiceImpl implements TelegramUserService {
     }
 
     @Override
-    public Optional<TelegramUser> findByChatId(String chatId) {
+    public Optional<TelegramUser> findByChatId(Long chatId) {
         return telegramUserRepository.findById(chatId);
     }
 }

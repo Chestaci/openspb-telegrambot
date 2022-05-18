@@ -1,4 +1,4 @@
-package com.github.Chestaci.openspbtb.repository;
+package com.github.Chestaci.openspbtb.service;
 
 import com.github.Chestaci.openspbtb.repository.entity.TelegramUser;
 import org.springframework.stereotype.Service;
@@ -31,5 +31,5 @@ public interface TelegramUserService {
      * @param chatId provided Chat ID
      * @return {@link TelegramUser} with provided chat ID or null otherwise.
      */
-    Optional<TelegramUser> findByChatId(String chatId);
+    Optional<TelegramUser> findByChatId(Long chatId);
 }

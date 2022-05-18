@@ -1,6 +1,7 @@
 package com.github.Chestaci.openspbtb.command;
 
-import com.github.Chestaci.openspbtb.repository.TelegramUserService;
+import com.github.Chestaci.openspbtb.service.NewsSubService;
+import com.github.Chestaci.openspbtb.service.TelegramUserService;
 import com.github.Chestaci.openspbtb.service.SendBotMessageService;
 import com.google.common.collect.ImmutableMap;
 
@@ -14,10 +15,10 @@ public class CommandContainer {
     private final ImmutableMap<String, Command> commandMap;
     private final Command unknownCommand;
 
-    public CommandContainer(SendBotMessageService sendBotMessageService, TelegramUserService telegramUserService) {
+    public CommandContainer(SendBotMessageService sendBotMessageService, TelegramUserService telegramUserService, NewsSubService newsSubService) {
 
         commandMap = ImmutableMap.<String, Command>builder()
-                .put(START.getCommandName(), new StartCommand(sendBotMessageService, telegramUserService))
+                .put(START.getCommandName(), new StartCommand(sendBotMessageService, telegramUserService, newsSubService))
                 .put(STOP.getCommandName(), new StopCommand(sendBotMessageService, telegramUserService))
                 .put(HELP.getCommandName(), new HelpCommand(sendBotMessageService))
                 .put(NO.getCommandName(), new NoCommand(sendBotMessageService))
